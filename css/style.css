@@ -2,6 +2,8 @@ body {
     background-color: #3D404B;
     margin: 0;
     padding: 0;
+    font-family: sans-serif, Verdana, Tahoma;
+    color: #C5C8D5;
 }
 
 .coords {
@@ -20,6 +22,7 @@ body {
     line-height: 40px;
     background-color: #1C1D29;
     padding-left: 10px;
+    font-size: 18px;
 }
 
 .weather {
@@ -33,21 +36,27 @@ body {
 }
 
 .top1 {
+    position: relative;
     background-color: #343541;
     height: 20%;
+    line-height: 50px;
 }
 
 .top {
+    position: relative;
     background-color: #393B44;
     height: 20%;
+    line-height: 50px;
 }
 
 .bottom1 {
+    position: relative;
     background-color: #1D1F2A;
     height: 80%;
 }
 
 .bottom {
+    position: relative;
     background-color: #22242E;
     height: 80%;
 }
@@ -81,4 +90,40 @@ body {
     height: 90%;
     margin: 5%;
     border: 1px solid #494C59;
+}
+
+.Day {
+    position: absolute;
+    right: 10px;
+}
+
+.weekDay {
+    position: absolute;
+    left: 10px;
+}
+
+.city {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+}
+
+.temp {
+    position: absolute;
+    left: 10px;
+    top: 60px;
+    color: white;
+    font-size: 30px;
+}
+
+.humidity {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+.cloud {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
