@@ -6,13 +6,16 @@
 }
 body {
     background-color: #3D404B;
+    font-family: sans-serif, Verdana, Tahoma;
+    color: #C5C8D5;
 }
 .coords {
     color: #B6B9C0;
-    padding-left: 1%;
+    padding: 2%;
+    line-height: 25px;
 }
 .inputDiv {
-    margin-left: 1%;
+    margin-left: 2%;
 }
 #messageError{
     color: white;
@@ -25,6 +28,12 @@ body {
     color: white;
     background-color: #1C1D29;
     padding-left: 10px;
+    font-size: 18px;
+}
+
+#input:focus {
+    background-color: white;
+    color:black
 }
 .weather {
     width: 98%;
@@ -90,4 +99,48 @@ body {
     height: 90%;
     margin: 5%;
     border: 1px solid #494C59;
+}
+.topOne {
+    position: relative;
+    background-color: #393B44;
+    height: 20%;
+    line-height: 50px;
+}
+.dayOne {
+    position: relative;
+    background-color: #22242E;
+    height: 80%;
+}
+.monthDay {
+    position: absolute;
+    right: 10px;
+}
+.weekDay {
+    position: absolute;
+    left: 10px;
+}
+.city {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.temp {
+    position: absolute;
+    left: 10px;
+    top: 65px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.humidity {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.cloud {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
