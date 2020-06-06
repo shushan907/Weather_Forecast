@@ -1,7 +1,11 @@
-body {
-    background-color: #3D404B;
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #3D404B;
+    
 }
 
 .coords {
@@ -33,21 +37,35 @@ body {
 }
 
 .top1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #343541;
     height: 20%;
 }
 
 .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #393B44;
     height: 20%;
 }
 
-.bottom1 {
+.day1 {
     background-color: #1D1F2A;
     height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
 
-.bottom {
+.day {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
     background-color: #22242E;
     height: 80%;
 }
