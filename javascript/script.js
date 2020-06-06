@@ -8,26 +8,16 @@ const API_KEY = '40a3ab422b6c7446253471c3714edfb8';
 //  Search City name
 // `${API_URL}weather?q=${inputValue}&appid=${API_KEY}&units=metric`
 // `${API_URL}forecast?q=${inputValue}&appid=${API_KEY}&units=metric`
-const icon2 = document.getElementById('icon2')
+
+const icon2 = document.getElementById('icon2');
+
 const iconTemp = (id) => {
     document.getElementById(id)
-}
-const byId = (id, value) => {
-    document.getElementById(id).innerHTML = value;
-}
+};
+
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August",
                 "September", "October", "November", "December"];
-
-const setQS = (selector, value) => {
-    document.querySelector(selector).innerText = value; 
-};
-
-const thisDayInfo = () => {
-    const day = new Date();
-    setQS('.weekDay', days[day.getDay()]);
-    setQS('.monthDay', `${months[day.getMonth()]}, ${day.getDate()}`);
-};
 
 const state = {
     mwd: null,
@@ -37,6 +27,19 @@ const state = {
     description: null,
     city: null,
     country: null
+};
+//---------------------Helping functions-----------------------------------------------
+const setQS = (selector, value) => {
+    document.querySelector(selector).innerText = value; 
+};
+const byId = (id, value) => {
+    document.getElementById(id).innerHTML = value;
+}
+
+const thisDayInfo = () => {
+    const day = new Date();
+    setQS('.weekDay', days[day.getDay()]);
+    setQS('.monthDay', `${months[day.getMonth()]}, ${day.getDate()}`);
 };
 
 const renderOneData = () => {
@@ -52,7 +55,7 @@ const renderData = () => {
     byId('temp2',`${state.temp}`)
     byId('humidity2',`${state.humidity} %`)
     byId('description2',`${state.description}`)
-}
+};
 
 const setStateOne = (data) => {
     state.city = data.name;
@@ -70,7 +73,10 @@ const setState = (data) => {
     state.description = data.list[7].weather[0].description
     state.humidity = data.list[7].main.humidity
     console.log(state)
-}
+}; 
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
 const gettingWeather = async () => {
     const inputValue = document.getElementById('input').value;
     if (inputValue) {
@@ -79,10 +85,11 @@ const gettingWeather = async () => {
         document.getElementById('messageError').innerHTML = 'Please write city or country name';
     }
     const response = await fetch(`${API_URL}forecast?q=${inputValue}&appid=${API_KEY}&units=metric`)
-    const data = await response.json()
-    setState(data)
-    renderData()
+    const data = await response.json();
+    setState(data);
+    renderData();
 }
+
 const enter = (event) => {
     if (event.key === 'Enter') {
         gettingWeather()
@@ -104,7 +111,7 @@ const enter = (event) => {
         thisDayInfo ();
     });
 })();
-
+//-------------------Change input style ------------------------------------
 (function(){
     const inputValue = document.getElementById('input').value;
     if (inputValue) {
