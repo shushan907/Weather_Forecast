@@ -25,7 +25,8 @@ const state = {
     city: null,
     country: null,
     lat: null,
-    lon: null
+    lon: null,
+    list: null
 };
 //---------------------Helping functions-----------------------------------------------
 const setQS = (selector, value) => {

@@ -1,0 +1,33 @@
+.show {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 200px;
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+}
+.show div {
+    margin: 5px;
+    text-align: center;
+    line-height: 35px;
+}
+.show1 div {
+    margin: 0 auto;
+}
+.show1, .show3, .show5, .show7 {
+    background-color: #BABCC5;
+    height: 190px;
+    padding-top: 7px;
+}
+.show2, .show4, .show6, .show8 {
+    background-color: #A3A6AE;
+    height: 190px;
+}
+.time {
+    width: 90%;
+    background-color: #D3D3DA;
+}
+.desc {
+    width: 90%;
+    background-color: #565150;
+}

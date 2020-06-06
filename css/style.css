@@ -30,7 +30,6 @@ body {
     padding-left: 10px;
     font-size: 18px;
 }
-
 #input:focus {
     background-color: white;
     color:black
@@ -42,7 +41,7 @@ body {
     grid-template-rows: 250px;
     background-color: #1D1F2A;
     border-radius: 15px;
-    margin: 20px auto;
+    margin: 20px auto 5px auto;
 }
 .top1 {
     display: flex;
