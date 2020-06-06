@@ -12,17 +12,15 @@
             <p>Geo coords</p>
             <p class='long_lang'></p>
         </div>
-
         <div class='inputDiv'>
-            <input type="text" class='input' placeholder="WRITE THE NAME OF THE CITY">
+            <input type="text" id='input' onkeyup="enter(event)" placeholder="WRITE THE NAME OF THE CITY">
+            <p id="messageError"></p>
         </div>
-
         <div class='weather'>
             <div class="one">
                 <div class="top"></div>
                 <div class="day"></div>
             </div>
-
             <div class="two">
                 <div class="top1"><p id="mwd2"></p></div>
                 <div class="day1">
@@ -32,7 +30,6 @@
                    <p id="desc2"></p> 
                 </div>
             </div>
-
             <div class="three">
                 <div class="top"><p id="mwd3"></p></div>
                 <div class="day">
@@ -42,7 +39,6 @@
                    <p id="desc3"></p> 
                 </div>
             </div>
-
             <div class="four">
                 <div class="top1"><p id="mwd4"></p></div>
                 <div class="day1">
@@ -52,7 +48,6 @@
                    <p id="desc4"></p> 
                 </div>
             </div>
-
             <div class="five">
                 <div class="top"><p id="mwd5"></p></div>
                 <div class="day">
@@ -62,7 +57,6 @@
                    <p id="desc5"></p> 
                 </div>
             </div>
-
             <div class="six">
                 <div class="top1"><p id="mwd6"></p></div>
                 <div class="day1">
@@ -72,7 +66,6 @@
                    <p id="desc6"></p> 
                 </div>
             </div>
-            
         </div>
     </div>
 

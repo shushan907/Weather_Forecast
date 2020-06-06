@@ -5,27 +5,26 @@
 }
 body {
     background-color: #3D404B;
-    
 }
-
 .coords {
     color: #B6B9C0;
     padding-left: 1%;
 }
-
 .inputDiv {
     margin-left: 1%;
 }
-
-.input {
+#messageError{
+    color: white;
+}
+#input {
     width: 98%;
     height: 45px;
     border-radius: 10px;
     line-height: 40px;
+    color: white;
     background-color: #1C1D29;
     padding-left: 10px;
 }
-
 .weather {
     width: 98%;
     display: grid;
@@ -35,7 +34,6 @@ body {
     border-radius: 15px;
     margin: 20px auto;
 }
-
 .top1 {
     display: flex;
     justify-content: center;
@@ -43,7 +41,6 @@ body {
     background-color: #343541;
     height: 20%;
 }
-
 .top {
     display: flex;
     justify-content: center;
@@ -51,7 +48,6 @@ body {
     background-color: #393B44;
     height: 20%;
 }
-
 .day1 {
     background-color: #1D1F2A;
     height: 80%;
@@ -60,7 +56,6 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
 .day {
     display: flex;
     justify-content: space-evenly;
@@ -69,12 +64,10 @@ body {
     background-color: #22242E;
     height: 80%;
 }
-
 .one {
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
 }
-
 .six {
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
@@ -82,18 +75,15 @@ body {
 .one .top {
     border-top-left-radius: 15px;
 }
-
 .one .bottom {
     border-bottom-left-radius: 15px;
 }
 .six .top1 {
     border-top-right-radius: 15px;
 }
-
 .six .bottom1 {
     border-bottom-right-radius: 15px;
 }
-
 .two:hover, .three:hover, .four:hover, .five:hover, .six:hover {
     width: 90%;
     height: 90%;
