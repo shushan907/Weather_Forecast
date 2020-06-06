@@ -15,10 +15,6 @@ const iconTemp = (id) => {
     document.getElementById(id)
 };
 
-const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const months = ["January", "February", "March", "April", "May", "June", "July", "August",
-                "September", "October", "November", "December"];
-
 const state = {
     mwd: null,
     icon: null,
@@ -36,33 +32,12 @@ const byId = (id, value) => {
     document.getElementById(id).innerHTML = value;
 }
 
-const thisDayInfo = () => {
-    const day = new Date();
-    setQS('.weekDay', days[day.getDay()]);
-    setQS('.monthDay', `${months[day.getMonth()]}, ${day.getDate()}`);
-};
-
-const renderOneData = () => {
-    setQS('.city', `${state.city}, ${state.country}`);
-    setQS('.temp', `${Math.round(state.temp)} °C`);
-    setQS('.humidityGet', `${state.humidity}%`);
-    setQS('.cloud', `${state.description.charAt(0).toUpperCase() + state.description.slice(1)}`);
-};
-
 const renderData = () => {
     byId('mwd2',`${state.mwd}`);
     icon2.src = `http://openweathermap.org/img/w/${state.icon}.png`
     byId('temp2',`${state.temp}`)
     byId('humidity2',`${state.humidity} %`)
     byId('description2',`${state.description}`)
-};
-
-const setStateOne = (data) => {
-    state.city = data.name;
-    state.temp = data.main.temp;
-    state.humidity = data.main.humidity;
-    state.country = data.sys.country;
-    state.description = data.weather[0].description;
 };
 
 const setState = (data) => {
@@ -88,29 +63,16 @@ const gettingWeather = async () => {
     const data = await response.json();
     setState(data);
     renderData();
-}
+};
+
+//----------------input keyup ENTER-------------------------------------
 
 const enter = (event) => {
     if (event.key === 'Enter') {
         gettingWeather()
     }
-}
+};
 
-//---------------Get longitude and latitude------------------------------------
-
-(function getDate() {
-    window.navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        setQS('.long_lang', `[${longitude.toFixed(2)}, ${latitude.toFixed(2)}]`);
-        (async function () {
-            let response = await fetch( `${API_URL}weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
-            let data = await response.json();
-            setStateOne(data);
-            renderOneData();
-        })();
-        thisDayInfo ();
-    });
-})();
 //-------------------Change input style ------------------------------------
 (function(){
     const inputValue = document.getElementById('input').value;
