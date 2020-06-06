@@ -82,16 +82,11 @@ body {
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
 }
-.one .top {
-    border-top-left-radius: 15px;
-}
-.one .bottom {
-    border-bottom-left-radius: 15px;
-}
+
 .six .top1 {
     border-top-right-radius: 15px;
 }
-.six .bottom1 {
+.six .day1 {
     border-bottom-right-radius: 15px;
 }
 .two:hover, .three:hover, .four:hover, .five:hover, .six:hover {
@@ -105,11 +100,13 @@ body {
     background-color: #393B44;
     height: 20%;
     line-height: 50px;
+    border-top-left-radius: 15px;
 }
 .dayOne {
     position: relative;
     background-color: #22242E;
     height: 80%;
+    border-bottom-left-radius: 15px;
 }
 .monthDay {
     position: absolute;

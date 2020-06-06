@@ -62,15 +62,17 @@ const gettingWeather = async () => {
     const response = await fetch(`${API_URL}forecast?q=${inputValue}&appid=${API_KEY}&units=metric`)
     const data = await response.json();
     setState(data);
+    setStateOne(data); 
     renderData();
+    renderOneData();
 };
 
 //----------------input keyup ENTER-------------------------------------
 
 const enter = (event) => {
     if (event.key === 'Enter') {
-        gettingWeather()
-    }
+        gettingWeather();
+    }   
 };
 
 //-------------------Change input style ------------------------------------

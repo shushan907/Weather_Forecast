@@ -14,11 +14,11 @@ const renderOneData = () => {
     setQS('.cloud', `${state.description.charAt(0).toUpperCase() + state.description.slice(1)}`);
 };
 const setStateOne = (data) => {
-    state.city = data.name;
-    state.temp = data.main.temp;
-    state.humidity = data.main.humidity;
-    state.country = data.sys.country;
-    state.description = data.weather[0].description;
+    state.city = data.city.name;
+    state.temp = data.list[0].main.temp;
+    state.humidity = data.list[0].main.humidity;
+    state.country = data.city.country;
+    state.description = data.list[0].weather[0].description;
 };
 //---------------Get longitude and latitude------------------------------------
 
@@ -27,7 +27,7 @@ const setStateOne = (data) => {
         const { latitude, longitude } = position.coords;
         setQS('.long_lang', `[${longitude.toFixed(2)}, ${latitude.toFixed(2)}]`);
         (async function () {
-            let response = await fetch( `${API_URL}weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
+            let response = await fetch( `${API_URL}forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
             let data = await response.json();
             setStateOne(data);
             renderOneData();
