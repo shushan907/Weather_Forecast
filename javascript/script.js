@@ -47,7 +47,6 @@ const setState = (data) => {
     state.icon = data.list[7].weather[0].icon
     state.description = data.list[7].weather[0].description
     state.humidity = data.list[7].main.humidity
-    console.log(state)
 }; 
 
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
@@ -57,27 +56,24 @@ const gettingWeather = async () => {
     if (inputValue) {
         setQS('#messageError', '');
         (async function () {
-            let response = await fetch(`${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric`);
+            let response = await fetch( `${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric` );
             if (response.status == 404) {
                 setQS('#messageError', 'Please, enter the correct city name!');
             } else {
                 let data = await response.json();
                 setState(data);
-                setStateOne(data); 
+                setStateOne(data);
                 renderData();
                 renderOneData();
-            }   })();
-        } else {
-            setQS('#messageError', 'Please, enter the city name!');
-        }
+            }   
+        })();
+    } else setQS( '#messageError', 'Please, enter the city name!' );
 }
 
 //----------------input keyup ENTER-------------------------------------
 
 const enter = (event) => {
-    if (event.key === 'Enter') {
-        gettingWeather();
-    }   
+    if (event.key === 'Enter') gettingWeather()  
 };
 
 //-------------------Change input style ------------------------------------
