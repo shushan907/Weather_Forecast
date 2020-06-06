@@ -13,6 +13,7 @@ const renderOneData = () => {
     setQS('.temp', `${Math.round(state.temp)} °C`);
     setQS('.humidityGet', `${state.humidity}%`);
     setQS('.cloud', `${state.description.charAt(0).toUpperCase() + state.description.slice(1)}`);
+    setQS('.long_lang', `[${state.lon.toFixed(2)}, ${state.lat.toFixed(2)}]`);
 };
 
 const setStateOne = (data) => {
@@ -21,6 +22,8 @@ const setStateOne = (data) => {
     state.humidity = data.list[0].main.humidity;
     state.country = data.city.country;
     state.description = data.list[0].weather[0].description;
+    state.lat = data.city.coord.lat;
+    state.lon = data.city.coord.lon;
 };
 
 //---------------Get longitude and latitude------------------------------------

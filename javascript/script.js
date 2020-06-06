@@ -22,7 +22,9 @@ const state = {
     humidity: null,
     description: null,
     city: null,
-    country: null
+    country: null,
+    lat: null,
+    lon: null
 };
 //---------------------Helping functions-----------------------------------------------
 const setQS = (selector, value) => {
@@ -65,6 +67,7 @@ const gettingWeather = async () => {
                 setStateOne(data);
                 renderData();
                 renderOneData();
+                console.log(data)
             }   
         })();
     } else setQS( '#messageError', 'Please, enter the city name!' );
