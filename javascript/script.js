@@ -55,17 +55,22 @@ const setState = (data) => {
 const gettingWeather = async () => {
     const inputValue = document.getElementById('input').value;
     if (inputValue) {
-        document.getElementById('messageError').innerHTML = '';
-    } else {
-        document.getElementById('messageError').innerHTML = 'Please write city or country name';
-    }
-    const response = await fetch(`${API_URL}forecast?q=${inputValue}&appid=${API_KEY}&units=metric`)
-    const data = await response.json();
-    setState(data);
-    setStateOne(data); 
-    renderData();
-    renderOneData();
-};
+        setQS('#messageError', '');
+        (async function () {
+            let response = await fetch(`${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric`);
+            if (response.status == 404) {
+                setQS('#messageError', 'Please, enter the correct city name!');
+            } else {
+                let data = await response.json();
+                setState(data);
+                setStateOne(data); 
+                renderData();
+                renderOneData();
+            }   })();
+        } else {
+            setQS('#messageError', 'Please, enter the city name!');
+        }
+}
 
 //----------------input keyup ENTER-------------------------------------
 

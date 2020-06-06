@@ -1,6 +1,7 @@
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August",
                 "September", "October", "November", "December"];
+
 const thisDayInfo = () => {
     const day = new Date();
     setQS('.weekDay', days[day.getDay()]);
@@ -13,6 +14,7 @@ const renderOneData = () => {
     setQS('.humidityGet', `${state.humidity}%`);
     setQS('.cloud', `${state.description.charAt(0).toUpperCase() + state.description.slice(1)}`);
 };
+
 const setStateOne = (data) => {
     state.city = data.city.name;
     state.temp = data.list[0].main.temp;
@@ -20,6 +22,7 @@ const setStateOne = (data) => {
     state.country = data.city.country;
     state.description = data.list[0].weather[0].description;
 };
+
 //---------------Get longitude and latitude------------------------------------
 
 (function getDate() {
