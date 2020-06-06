@@ -122,13 +122,14 @@ body {
     top: 30px;
     font-weight: bold;
     font-size: 25px;
+    color: #BFC2C9;
 }
 .temp {
     position: absolute;
     left: 10px;
     top: 65px;
     color: white;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
 }
 .humidity {
@@ -140,6 +141,11 @@ body {
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 #messageError {
     font-size: 18px;

@@ -1,4 +1,5 @@
 const API_URL = 'https://api.openweathermap.org/data/2.5/';
+const TEMP_URL = 'http://openweathermap.org/img/w/';
 const API_KEY = '40a3ab422b6c7446253471c3714edfb8';
 
 // Geolocation Cuurent data Weather
@@ -36,7 +37,7 @@ const byId = (id, value) => {
 
 const renderData = () => {
     byId('mwd2',`${state.mwd}`);
-    icon2.src = `http://openweathermap.org/img/w/${state.icon}.png`
+    icon2.src = `${TEMP_URL}${state.icon}.png`
     byId('temp2',`${state.temp}`)
     byId('humidity2',`${state.humidity} %`)
     byId('description2',`${state.description}`)
@@ -67,7 +68,6 @@ const gettingWeather = async () => {
                 setStateOne(data);
                 renderData();
                 renderOneData();
-                console.log(data)
             }   
         })();
     } else setQS( '#messageError', 'Please, enter the city name!' );
