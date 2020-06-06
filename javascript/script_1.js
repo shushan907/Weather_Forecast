@@ -21,21 +21,6 @@ const callNextDayInfo = () => {
     nextDayInfo('#mwd6',32)
 };
 
-const eventLis = (divName) => {
-    document.querySelector(divName).addEventListener('mouseover', () => {
-        document.querySelector('.show').style.display = "grid";
-    });
-    document.querySelector(divName).addEventListener('mouseout', () => {
-        document.querySelector('.show').style.display = "none";
-    });
-};
-
-eventLis('.two');
-eventLis('.three');
-eventLis('.four');
-eventLis('.five');
-eventLis('.six');
-
 const setStateOne = (data) => {
     state.city = data.city.name;
     state.temp = data.list[0].main.temp;
@@ -75,3 +60,43 @@ const renderOneData = () => {
     });
 })();
 
+//avartvac che
+const setStateShow = (data, i) => {
+    state.temp = data.list[i].main.temp;
+    state.humidity = data.list[i].main.humidity;
+    state.country = data.city.country;
+    state.description = data.list[i].weather[i].description;
+    state.icon = data.list[i].weather[i].icon;
+    state.list = data.list;
+};
+
+const renderShowData = () => {
+    setQS('.time', `${state.city}`);
+    setQS('.temperature', `${Math.round(state.temp)} °C`);
+    setQS('.humGet', `${state.humidity}%`);
+    setQS('.desc', `${state.description.charAt(0).toUpperCase() + state.description.slice(1)}`);
+    document.querySelector('.iconList').src = `${TEMP_URL}${state.icon}.png`;
+};
+
+const eventLis = (divName, i) => {
+    document.querySelector(divName).addEventListener('mouseover', () => {
+        document.querySelector('.show').style.display = "grid";
+        (async function () {
+            const inputValue = document.getElementById('input').value;
+            let response = await fetch( `${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric` );
+            let data = await response.json();
+            setStateShow(data, i);
+            renderShowData();
+        })();
+    });
+    document.querySelector(divName).addEventListener('mouseout', () => {
+        document.querySelector('.show').style.display = "none";
+    });
+};
+
+eventLis('.two', 0);
+eventLis('.three');
+eventLis('.four');
+eventLis('.five');
+eventLis('.six');
+//**********************************************************************
