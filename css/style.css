@@ -11,23 +11,31 @@ body {
 }
 .coords {
     color: #B6B9C0;
-    padding-left: 1%;
+    padding: 2%;
+    line-height: 25px;
 }
+
 .inputDiv {
-    margin-left: 1%;
+    margin-left: 2%;
 }
+
+#messageError{
+    color: white;
+}
+
 #input {
     width: 98%;
     height: 45px;
     border-radius: 10px;
     line-height: 40px;
+    color: white;
     background-color: #1C1D29;
     padding-left: 10px;
     font-size: 18px;
 }
 #input:focus {
-    color:black;
     background-color: white;
+    color:black
 }
 .weather {
     width: 98%;
@@ -36,38 +44,7 @@ body {
     grid-template-rows: 250px;
     background-color: #1D1F2A;
     border-radius: 15px;
-    margin: 20px auto;
-}
-.top1 {
-    position: relative;
-    background-color: #343541;
-    height: 20%;
-    line-height: 50px;
-}
-.top {
-    position: relative;
-    background-color: #393B44;
-    height: 20%;
-    line-height: 50px;
-}
-.bottom {
-    position: relative;
-    background-color: #22242E;
-    height: 80%;
-}
-.heath1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #343541;
-    height: 20%;
-}
-.heath {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #393B44;
-    height: 20%;
+    margin: 20px auto 5px auto;
 }
 .day1 {
     background-color: #1D1F2A;
@@ -85,6 +62,20 @@ body {
     background-color: #22242E;
     height: 80%;
 }
+.heath1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343541;
+    height: 20%;
+}
+.heath {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #393B44;
+    height: 20%;
+}
 .one {
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
@@ -93,16 +84,11 @@ body {
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
 }
-.one .top .heath {
-    border-top-left-radius: 15px;
-}
-.one .bottom .day {
-    border-bottom-left-radius: 15px;
-}
-#six .top1 .heath1 {
+
+#six .day {
     border-top-right-radius: 15px;
 }
-#six .bottom1 .day1 {
+#six .day1 {
     border-bottom-right-radius: 15px;
 }
 #two:hover, #three:hover, #four:hover, #five:hover, #six:hover {
@@ -111,7 +97,20 @@ body {
     margin: 5%;
     border: 1px solid #494C59;
 }
-.Day {
+.topOne {
+    position: relative;
+    background-color: #393B44;
+    height: 20%;
+    line-height: 50px;
+    border-top-left-radius: 15px;
+}
+.dayOne {
+    position: relative;
+    background-color: #22242E;
+    height: 80%;
+    border-bottom-left-radius: 15px;
+}
+.monthDay {
     position: absolute;
     right: 10px;
 }
@@ -125,13 +124,14 @@ body {
     top: 30px;
     font-weight: bold;
     font-size: 25px;
+    color: #BFC2C9;
 }
 .temp {
     position: absolute;
     left: 10px;
     top: 65px;
     color: white;
-    font-size: 35px;
+    font-size: 40px;
     font-weight: bold;
 }
 .humidity {
@@ -144,6 +144,18 @@ body {
     right: 10px;
     bottom: 10px;
 }
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#messageError {
+    font-size: 18px;
+    color: white;
+    margin: 5px 0 5px 40%;
+}
+
+
 #show {
     display: none;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -177,4 +189,3 @@ body {
     width: 90%;
     background-color: #565150;
 }
-
