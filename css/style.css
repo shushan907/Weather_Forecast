@@ -85,7 +85,7 @@ body {
     border-top-right-radius: 15px;
 }
 
-#six .day {
+#six .day #show8 {
     border-top-right-radius: 15px;
 }
 #six .day1 {
@@ -164,6 +164,7 @@ body {
     width: 90%;
     margin: 0 auto;
 }
+
 #show div {
     margin: 5px;
     text-align: center;
@@ -188,4 +189,13 @@ body {
 .desc {
     width: 90%;
     background-color: #565150;
+}
+.desc > p{
+    font-size: 10px;
+}
+.heath1 > p {
+    font-size: 11px;
+}
+.heath > p {
+    font-size: 11px;
 }

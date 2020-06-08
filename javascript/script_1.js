@@ -6,7 +6,6 @@ const thisDayInfo = () => {
     const day = new Date();
     setQS('.weekDay', days[day.getDay()]);
     setQS('.monthDay', `${months[day.getMonth()]}, ${day.getDate()}`);
-    console.log(day)
 };
 
 const nextDayInfo = (QS, i) => {
@@ -52,7 +51,6 @@ const renderOneData = () => {
         (async function () {
             let response = await fetch( `${API_URL}forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
             let data = await response.json();
-            console.log(data)
             setStateOne(data);
             renderOneData();
             callNextDayInfo();
@@ -101,3 +99,109 @@ const renderShowData = () => {
 // eventLis('.five');
 // eventLis('.six');
 //**********************************************************************
+//   const time1 = async () =>{
+//         const inputValue = document.getElementById('input').value;
+//         const response = await fetch( `${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric` );
+//         const data = await response.json();
+//         console.log(data)
+//         setState(data,4);
+//         renderData(7) ; 
+//         setState(data,5);
+//         renderData(8) ; 
+//         setState(data,6);
+//         renderData(9) ; 
+//         setState(data,7);
+//         renderData(10) ; 
+//         setState(data,8);
+//         renderData(11) ; 
+//         setState(data,9);
+//         renderData(12) ; 
+//         setState(data,10);
+//         renderData(13) ; 
+//         setState(data,11);
+//         renderData(14) ; 
+//         }
+        // const time2 = async (data) =>{
+        //     const inputValue = document.getElementById('input').value;
+        //     const response = await fetch( `${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric` );
+        //     const data = await response.json();
+        //     setState(data,12);
+        //     renderData(7) ; 
+        //     setState(data,13);
+        //     renderData(8) ; 
+        //     setState(data,14);
+        //     renderData(9) ; 
+        //     setState(data,15);
+        //     renderData(10) ; 
+        //     setState(data,16);
+        //     renderData(11) ; 
+        //     setState(data,17);
+        //     renderData(12) ; 
+        //     setState(data,18);
+        //     renderData(13) ; 
+        //     setState(data,19);
+        //     renderData(14) ; 
+        //     }
+        //     const time3 = async (data) =>{
+        //         const inputValue = document.getElementById('input').value;
+        //         const response = await fetch( `${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric` );
+        //         const data = await response.json();
+        //         setState(data,20);
+        //         renderData(7) ; 
+        //         setState(data,21);
+        //         renderData(8) ; 
+        //         setState(data,22);
+        //         renderData(9) ; 
+        //         setState(data,23);
+        //         renderData(10) ; 
+        //         setState(data,24);
+        //         renderData(11) ; 
+        //         setState(data,25);
+        //         renderData(12) ; 
+        //         setState(data,26);
+        //         renderData(13) ; 
+        //         setState(data,27);
+        //         renderData(14) ; 
+        //         }
+        //         const time4 = async (data) =>{
+        //             const inputValue = document.getElementById('input').value;
+        //             const response = await fetch( `${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric` );
+        //             const data = await response.json();
+        //             setState(data,28);
+        //             renderData(7) ; 
+        //             setState(data,29);
+        //             renderData(8) ; 
+        //             setState(data,30);
+        //             renderData(9) ; 
+        //             setState(data,31);
+        //             renderData(10) ; 
+        //             setState(data,32);
+        //             renderData(11) ; 
+        //             setState(data,33);
+        //             renderData(12) ; 
+        //             setState(data,34);
+        //             renderData(13) ; 
+        //             setState(data,35);
+        //             renderData(14) ; 
+        //             }
+        //             const time5 = async (data) =>{
+        //                 const inputValue = document.getElementById('input').value;
+        //                 const response = await fetch( `${API_URL}forecast?q=${inputValue}&APPID=${API_KEY}&units=metric` );
+        //                 const data = await response.json();
+        //                 setState(data,36);
+        //                 renderData(7) ; 
+        //                 setState(data,37);
+        //                 renderData(8) ; 
+        //                 setState(data,38);
+        //                 renderData(9) ; 
+        //                 setState(data,39);
+        //                 renderData(10) ; 
+        //                 setState(data,40);
+        //                 renderData(11) ; 
+        //                 // setState(data,9);
+        //                 // renderData(12) ; 
+        //                 // setState(data,10);
+        //                 // renderData(13) ; 
+        //                 // setState(data,11);
+        //                 // renderData(14) ; 
+        //                 }
