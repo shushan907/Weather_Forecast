@@ -14,15 +14,12 @@ body {
     padding: 2%;
     line-height: 25px;
 }
-
 .inputDiv {
     margin-left: 2%;
 }
-
 #messageError{
     color: white;
 }
-
 #input {
     width: 98%;
     height: 45px;
@@ -84,7 +81,6 @@ body {
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
 }
-
 #six .day {
     border-top-right-radius: 15px;
 }
@@ -154,8 +150,6 @@ body {
     color: white;
     margin: 5px 0 5px 40%;
 }
-
-
 #show {
     display: none;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -188,4 +182,10 @@ body {
 .desc {
     width: 90%;
     background-color: #565150;
+}
+.heath1 > p {
+    font-size: 11px;
+}
+.heath > p {
+    font-size: 11px;
 }
