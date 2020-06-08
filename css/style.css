@@ -62,6 +62,7 @@ body {
     background-color: #22242E;
     height: 80%;
 }
+/*minchev stex nujmn a*/
 .heath1 {
     display: flex;
     justify-content: center;
@@ -199,3 +200,133 @@ body {
 .heath > p {
     font-size: 11px;
 }
+
+/* 
+.top1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343541;
+    height: 20%;
+}
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #393B44;
+    height: 20%;
+}
+
+.one {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.six {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.six .top1 {
+    border-top-right-radius: 15px;
+}
+.six .day1 {
+    border-bottom-right-radius: 15px;
+}
+.two:hover, .three:hover, .four:hover, .five:hover, .six:hover {
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    border: 1px solid #494C59;
+}
+.topOne {
+    position: relative;
+    background-color: #393B44;
+    height: 20%;
+    line-height: 50px;
+    border-top-left-radius: 15px;
+}
+.dayOne {
+    position: relative;
+    background-color: #22242E;
+    height: 80%;
+    border-bottom-left-radius: 15px;
+}
+.monthDay {
+    position: absolute;
+    right: 10px;
+}
+.weekDay {
+    position: absolute;
+    left: 10px;
+}
+.city {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #BFC2C9;
+}
+.temp {
+    position: absolute;
+    left: 10px;
+    top: 65px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+.humidity {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.cloud {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#messageError {
+    font-size: 18px;
+    color: white;
+    margin: 5px 0 5px 40%;
+}
+.show {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 200px;
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+}
+.show div {
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+.show1, .show3, .show5, .show7, .show2, .show4, .show6, .show8 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 36px 36px 36px 36px 36px;
+}
+.show1, .show3, .show5, .show7 {
+    background-color: #BABCC5;
+    height: 190px;
+    padding-top: 5px;
+}
+.show2, .show4, .show6, .show8 {
+    background-color: #A3A6AE;
+    height: 190px;
+    padding-top: 5px;
+}
+.time1, .time2, .time3, .time4, .time5, .time6, .time7, .time8 {
+    background-color: #D3D3DA;
+}
+.desc1, .desc2, .desc3, .desc4, .desc5, .desc6, .desc7, .desc8{
+    background-color: #565150;
+}
+/*
