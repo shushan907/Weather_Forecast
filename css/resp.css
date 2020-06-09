@@ -1,0 +1,71 @@
+@media(min-width: 0px) and (max-width: 649px ){
+    
+    #input{
+        line-height: 35%;
+        margin: 45px 10%;
+        width: 70%;
+        font-size: 13px;
+    }
+    #messageError {
+        font-size: 13px;
+        position: absolute;
+        left: 20%;
+        top:27%;
+        margin: 0;
+    }
+    .weather {
+        margin: 2px;
+        grid-template-columns: 100%;
+        grid-template-rows: 250px;
+    }
+    .weather div {
+        border-radius: 5px;
+    }
+    #map {
+        width: 100px;
+        right: 10px;
+    }
+    .show {
+        margin: 6px;
+        width: 98%;
+        grid-template-columns: 50% 50%;
+        height: 820px;
+    }
+    
+}
+
+@media(min-width: 650px) and (max-width: 1050px ){
+    
+    #input{
+        line-height: 35%;
+        margin: 45px 15%;
+        width: 70%;
+        font-size: 13px;
+    }
+    #messageError {
+        font-size: 13px;
+        position: absolute;
+        left: 40%;
+        top:18%;
+        margin: 0;
+    }
+    .weather {
+        margin: 2px;
+        grid-template-columns:  1fr 1fr 1fr;
+        height: 500px;
+    }
+    .weather div {
+        border-radius: 5px;
+    }
+    #map {
+        width: 200px;
+        right: 10px;
+    }
+    .show {
+        margin: 6px;
+        width: 98%;
+        grid-template-columns: 25% 25% 25% 25%;
+        height: 410px;
+    }
+
+}

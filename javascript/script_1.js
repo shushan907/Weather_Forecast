@@ -58,9 +58,7 @@ showInfoEach3hours('.six', 32);
 //----------------input keyup ENTER-----------------------------------------
 
 const enter = (event) => {
-    if (event.key === 'Enter') {
-        gettingWeather();
-    }
+    if (event.key === 'Enter') gettingWeather();
 };
 
 //-------------------Change input style ------------------------------------
