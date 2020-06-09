@@ -20,6 +20,21 @@ const callNextDayInfo = () => {
     nextDayInfo('#mwd5',31);
     nextDayInfo('#mwd6',39)
 };
+const renderAndStateCall = (data) => {
+    setState(data, 0);
+    renderOneData();
+    setState(data, 0);
+    renderData(2);
+    setState(data, 8);
+    renderData(3);
+    setState(data, 16);
+    renderData(4);
+    setState(data, 24);
+    renderData(5);
+    setState(data, 32);
+    renderData(6);
+    callNextDayInfo();
+};
 
 const setStateOne = (data) => {
     state.city = data.city.name;
@@ -51,8 +66,10 @@ const renderOneData = () => {
         (async function () {
             let response = await fetch( `${API_URL}forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
             let data = await response.json();
+            map(longitude, latitude);
             setStateOne(data);
             renderOneData();
+            renderAndStateCall(data);
             callNextDayInfo();
         })();
         thisDayInfo ();

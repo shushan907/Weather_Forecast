@@ -19,6 +19,15 @@ const state = {
     lon: null,
     list: null
 };
+const map = (lon, lat) => {
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic2h1c2hhbjkwNyIsImEiOiJja2I2d3lnaDgwMDVzMnFueWp1N21mcTJxIn0.sa2X01ZgW8_r1In5A6sLFw';
+        new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [lon, lat],
+        zoom: 7,
+    });  
+};
 //---------------------Helping functions-----------------------------------------------
 const setQS = (selector, value) => {
     document.querySelector(selector).innerText = value;
@@ -61,6 +70,7 @@ const gettingWeather = async () => {
                 renderData(6);
                 setStateOne(data);
                 renderOneData();
+                map(data.city.coord.lon, data.city.coord.lat);
             }
         })();
     } else setQS('#messageError', 'Please, enter the city name!');
@@ -237,21 +247,7 @@ const callNextDayInfo = () => {
     nextDayInfo('#mwd6', 32)
 };
 
-const renderAndStateCall = (data) => {
-    setState(data, 0);
-    renderOneData();
-    setState(data, 0);
-    renderData(2);
-    setState(data, 8);
-    renderData(3);
-    setState(data, 16);
-    renderData(4);
-    setState(data, 24);
-    renderData(5);
-    setState(data, 32);
-    renderData(6);
-    callNextDayInfo();
-};
+
 
 const transformDataForShow = (data, i) => {
     data.list = data.list.slice (i, i + 8);
