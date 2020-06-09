@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Forecast</title>
+    <title>Weather_Forecast</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="./css/show.css">
+    <link rel="stylesheet" href="./css/resp.css">
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"type="text/css"/>
+
 </head>
 <body>
     <div>
@@ -36,134 +39,7 @@
                     <img class='icon' src=''>
                 </div>
             </div>
-             <!-- ----------------------------------------------------------------------- -->
-           
-             <div id="two">
-                <div class="heath1"><p id="mwd2"></p></div>
-                <div class="day1">
-                    <img src="" alt="" id="icon2">
-                   <p id="temp2"></p>
-                   <p id="humidity2"></p>
-                   <p id="description2"></p> 
-                </div>
-            </div>
-            <div id="three">
-                <div class="heath"><p id="mwd3"></p></div>
-                <div class="day">
-                    <img src="" alt="" id="icon3">
-                   <p id="temp3"></p>
-                   <p id="humidity3"></p>
-                   <p id="description3"></p> 
-                </div>
-            </div>
-            <div id="four">
-                <div class="heath1"><p id="mwd4"></p></div>
-                <div class="day1">
-                    <img src="" alt="" id="icon4">
-                   <p id="temp4"></p>
-                   <p id="humidity4"></p>
-                   <p id="description4"></p> 
-                </div>
-            </div>
-            <div id="five">
-                <div class="heath"><p id="mwd5"></p></div>
-                <div class="day">
-                    <img src="" alt="" id="icon5">
-                   <p id="temp5"></p>
-                   <p id="humidity5"></p>
-                   <p id="description5"></p> 
-                </div>
-            </div>
-            <div id="six">
-                <div class="heath1"><p id="mwd6"></p></div>
-                <div class="day1">
-                    <img src="" alt="" id="icon6">
-                   <p id="temp6"></p>
-                   <p id="humidity6"></p>
-                   <p id="description6"></p> 
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- -------------------------------------------------------------------------------------- -->
-    <div id="show">
-
-        <div id="show1">
-            <div class="time1"><p></p></div>
-               <img src="" alt="" id="icon7">
-                   <p id="temp7"></p>
-                   <p id="humidity7"></p>
-            <div class="desc"><p id="description7"></p></div>
-        </div>
-
-        <div id="show2">
-            <div class="time2"><p></p></div>
-                <img src="" alt="" id="icon8">
-                   <p id="temp8"></p>
-                   <p id="humidity8"></p>
-            <div class="desc"><p id="description8"></p></div>
-        </div>
-
-        <div id="show3">
-            <div class="time3"><p></p></div>
-                <img src="" alt="" id="icon9">
-                   <p id="temp9"></p>
-                   <p id="humidity9"></p>
-           <div class="desc"><p id="description9"></p></div>     
-        </div>
-
-        <div id="show4">
-            <div class="time4"><p></p></div>
-               <img src="" alt="" id="icon10">
-                   <p id="temp10"></p>
-                   <p id="humidity10"></p> 
-            <div class="desc"><p id="description10"></p></div>
-        </div>
-        
-        <div id="show5">
-            <div class="time5"><p></p></div>
-              <img src="" alt="" id="icon11">
-                   <p id="temp11"></p>
-                   <p id="humidity11"></p>  
-            <div class="desc"><p id="description11"></p></div>
-        </div>
-
-        <div id="show6">
-            <div class="time6"><p></p></div>
-              <img src="" alt="" id="icon12">
-                   <p id="temp12"></p>
-                   <p id="humidity12"></p>  
-            <div class="desc"><p id="description12"></p></div>
-        </div>
-
-        <div id="show7">
-            <div class="time7"><p></p></div>
-              <img src="" alt="" id="icon13">
-                   <p id="temp13"></p>
-                   <p id="humidity13"></p>  
-            <div class="desc"><p id="description13"></p></div>
-        </div>
-
-        <div id="show8">
-            <div class="time8"><p></p></div>   
-              <img src="" alt="" id="icon14">
-                   <p id="temp14"></p>
-                   <p id="humidity14"></p>      
-           <div class="desc"><p id="description14"></p></div>     
-        </div>
-    </div>
-</div>
-    <div id='map'></div>
-    <script src="./javascript/script.js"></script>
-    <script src="./javascript/script_1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
-</body>
-</html>
-
-<!--
-    <div class="two">
+            <div class="two">
                 <div class="top1"><p id="mwd2"></p></div>
                 <div class="day1">
                     <img src="" alt="" id="icon2">
@@ -314,4 +190,13 @@
                 </div>
                 <div class="desc8"></div>
             </div>
--->
+        </div>
+    </div>
+    <div id='map'></div>
+    <script src="./javascript/script.js"></script>
+    <script src="./javascript/script_1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+</body>
+</html>

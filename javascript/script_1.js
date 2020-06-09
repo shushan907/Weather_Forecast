@@ -1,81 +1,3 @@
-const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const months = ["January", "February", "March", "April", "May", "June", "July", "August",
-                "September", "October", "November", "December"];
-                
-const thisDayInfo = () => {
-    const day = new Date();
-    setQS('.weekDay', days[day.getDay()]);
-    setQS('.monthDay', `${months[day.getMonth()]}, ${day.getDate()}`);
-};
-
-const nextDayInfo = (QS, i) => {
-    const day = new Date(state.list[i].dt_txt.slice(0,10));
-    setQS(QS,`${days[day.getDay()]} - ${months[day.getMonth()]} - ${day.getDate()}`);
-};
-
-const callNextDayInfo = () => {
-    nextDayInfo('#mwd2',7);
-    nextDayInfo('#mwd3',15);
-    nextDayInfo('#mwd4',23);
-    nextDayInfo('#mwd5',31);
-    nextDayInfo('#mwd6',39)
-};
-const renderAndStateCall = (data) => {
-    setState(data, 0);
-    renderOneData();
-    setState(data, 0);
-    renderData(2);
-    setState(data, 8);
-    renderData(3);
-    setState(data, 16);
-    renderData(4);
-    setState(data, 24);
-    renderData(5);
-    setState(data, 32);
-    renderData(6);
-    callNextDayInfo();
-};
-
-const setStateOne = (data) => {
-    state.city = data.city.name;
-    state.temp = data.list[0].main.temp;
-    state.humidity = data.list[0].main.humidity;
-    state.country = data.city.country;
-    state.description = data.list[0].weather[0].description;
-    state.lat = data.city.coord.lat;
-    state.lon = data.city.coord.lon;
-    state.icon = data.list[0].weather[0].icon;
-    state.list = data.list;
-};
-
-const renderOneData = () => {
-    setQS('.city', `${state.city}, ${state.country}`);
-    setQS('.temp', `${Math.round(state.temp)} °C`);
-    setQS('.humidityGet', `${state.humidity}%`);
-    setQS('.cloud', `${state.description.charAt(0).toUpperCase() + state.description.slice(1)}`);
-    document.querySelector('.icon').src = `${API_IMG}${state.icon}.png`;
-    setQS('.long_lang', `[${state.lon.toFixed(2)}, ${state.lat.toFixed(2)}]`);
-};
-
-//---------------Get longitude and latitude------------------------------------
-
-(function getDate() {
-    window.navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        setQS('.long_lang', `[${longitude.toFixed(2)}, ${latitude.toFixed(2)}]`);
-        (async function () {
-            let response = await fetch( `${API_URL}forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
-            let data = await response.json();
-            map(longitude, latitude);
-            setStateOne(data);
-            renderOneData();
-            renderAndStateCall(data);
-            callNextDayInfo();
-        })();
-        thisDayInfo ();
-    });
-})();
-/*
 //---------------Get information for each city------------------------------------
 const gettingWeather = async () => {
     const inputValue = document.getElementById('input').value;
@@ -88,6 +10,7 @@ const gettingWeather = async () => {
             } else {
                 let data = await response.json();
                 renderAndStateCall(data);
+                map(data.city.coord.lon, data.city.coord.lat) 
             }   
         })();
     } else setQS( '#messageError', 'Please, enter the city name!' );
@@ -103,6 +26,7 @@ const gettingWeather = async () => {
             let response = await fetch( `${API_URL}forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
             let data = await response.json();
             renderAndStateCall(data);
+            map(longitude, latitude);
         })();
         thisDayInfo ();
     });
@@ -134,7 +58,9 @@ showInfoEach3hours('.six', 32);
 //----------------input keyup ENTER-----------------------------------------
 
 const enter = (event) => {
-    if (event.key === 'Enter') gettingWeather()  
+    if (event.key === 'Enter') {
+        gettingWeather();
+    }
 };
 
 //-------------------Change input style ------------------------------------
@@ -144,4 +70,3 @@ const enter = (event) => {
         document.getElementById('input').style.cssText = 'background-color: "white"; color:"black"';
     } 
 })();
-*/
