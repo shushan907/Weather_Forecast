@@ -34,7 +34,7 @@
     
 }
 
-@media(min-width: 650px) and (max-width: 1050px ){
+@media(min-width: 650px) and (max-width: 850px ){
     
     #input{
         line-height: 35%;

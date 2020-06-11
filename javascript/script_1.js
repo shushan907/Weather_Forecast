@@ -35,16 +35,18 @@ const gettingWeather = async () => {
 //-------------------function for show weather information for each 3 hours-------
 
 const showInfoEach3hours = (divName, i) => {
-    document.querySelector(divName).addEventListener('mouseover', () => {
-        document.querySelector('.show').style.display = "grid";
-        const inputValue = document.getElementById('input').value;
-        inputValue ? transformDataForShowInputedCity(i) : transformDataForShowLocation(i)
+    let count = 0;
+    const inputValue = document.getElementById('input').value;
+    document.querySelector(divName).addEventListener('click', () => {
+        if (count % 2 == 0) {
+            document.querySelector('.show').style.display = "grid";
+            inputValue ? transformDataForShowInputedCity(i) : transformDataForShowLocation(i);
+            count++;
+        } else  {
+            document.querySelector('.show').style.display = "none";
+        count++;
+        }
     });
-
-    document.querySelector(divName).addEventListener('mouseout', () => {
-        document.querySelector('.show').style.display = "none";
-    });
-
 };
 
 //----------Call functions for show weather information for each 3 hours----
