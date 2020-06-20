@@ -70,3 +70,12 @@ const enter = (event) => {
         document.getElementById('input').style.cssText = 'background-color: "white"; color:"black"';
     } 
 })();
+//--------------------------------------------------------------------------
+(function(){
+    const img = document.getElementsByTagName('img');
+    for(let i = 0; i < img.length; i++) {
+        img[i].addEventListener('abort', () => {
+            img[i].style.display = 'none';
+        })
+    }
+})()
