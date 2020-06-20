@@ -31,6 +31,9 @@
         grid-template-columns: 50% 50%;
         height: 820px;
     }
+    .icon {
+        display: none;
+    }
     
 }
 
