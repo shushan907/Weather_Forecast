@@ -31,10 +31,7 @@
         grid-template-columns: 50% 50%;
         height: 820px;
     }
-    .icon {
-        display: none;
-    }
-    
+
 }
 
 @media(min-width: 650px) and (max-width: 849px ){
